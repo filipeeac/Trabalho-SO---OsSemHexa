@@ -2,9 +2,14 @@
 #include <stdlib.h>
 
 int main() {
-    printf("Hello World!\n");
-    printf("Pressione ENTER para continuar...");
-    getchar();
+    int p;
+
+    while(1){
+        p+=3;
+        if(p >= 10000000){
+            p-=1090;
+        }    
+    }
     
     return 0;
 }
