@@ -121,19 +121,19 @@ int main(int argc, char* argv[]){
         if(ie.value != 1) continue;
 
         if(ie.code == KEY_BACKSPACE){
-            putchar('\b');
-            putchar(' ');
-            putchar('\b');
-            fflush(stdout);
+            logger_putc('\b');
+            logger_putc(' ');
+            logger_putc('\b');
+            logger_flush();
             continue;
         }
 
         if(ie.code == KEY_TAB){
-            putchar(' ');
-            putchar(' ');
-            putchar(' ');
-            putchar(' ');
-            fflush(stdout);
+            logger_putc(' ');
+            logger_putc(' ');
+            logger_putc(' ');
+            logger_putc(' ');
+            logger_flush();
             continue;
         }
 
