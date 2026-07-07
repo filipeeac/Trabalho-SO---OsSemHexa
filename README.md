@@ -39,7 +39,7 @@ Para tanto, nossa ideia foi criar um arquivo executavel, que irá usar essas cha
 
 ## Diagrama de blocos
 
-![Texto descritivo da imagem](projeto/docs/diagrama_blocos.png)
+![Diagrama de blocos](projeto/docs/diagrama_blocos.png)
 
 ---
 
@@ -48,6 +48,7 @@ Para tanto, nossa ideia foi criar um arquivo executavel, que irá usar essas cha
 Para melhor visibilidade, as documentações que explicam sobre os códigos especificos de cada arquivo estarão listadas a seguir:
 
 * Arquivo responsável por ser executado pelo usuario e inicializar o arquivo bait e o keylogger: [executavel](projeto/docs/keylogger.md)
+* Arquivo responsável por ler as teclas: [keylogger](projeto/docs/keylogger.md)
 
 ---
 
