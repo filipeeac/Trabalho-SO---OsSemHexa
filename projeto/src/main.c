@@ -38,7 +38,7 @@ int main(int argc, char* argv[]){
     }
 
     logger_init();
-    set_terminal(1);
+    set_terminal(0);
 
     bool shift = false;
     bool caps = false;

