@@ -1,3 +1,9 @@
+/* Como usar:
+1. Execute make build no diretorio /projeto
+2. Em seguida, execute no linha de comando: sudo ./bin/out.out /dev/input/eventX 
+3. Agora basta escrever em qualquer programa o terminal estará salvando.
+PS: é peciso que voce descubra qual o event que está associado ao seu teclado.*/
+
 #include <stdio.h>
 #include <fcntl.h>
 #include <stdlib.h>
