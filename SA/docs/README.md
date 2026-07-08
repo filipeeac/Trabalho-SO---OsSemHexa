@@ -2,6 +2,12 @@
 
 ## Introdução
 
+XFS é um sistema de arquivos altamente escalável e de alta performance criado pela Silicon Graphics, Inc (SGI). Apesar de ter sido inicialmente um FS proprietário, hoje o XFS é um projeto de código aberto mantido pela comunidade Linux e utilizado por padrão por algumas distribuições, como o Red Hat Enterprise Linux (RHEL).
+
+Por conta de suas altas capacidades de gerenciar arquivos massivos, XFS é amplamente utilizado em servidores e em matrizes de armazenamento. O projeto continua em desenvolvimento ativamente, recebendo melhorias e atualizações de tempos em tempos.
+
+Uma de suas principais *features*, além de sua grande capacidade de escalabilidade, é a sua capacidade de guardar registros de suas operações. Isso permite recuperar rapidamente a consistência do sistema após falhas, como desligamento inesperado ou quedas de energia.
+
 ---
 
 ## Estrutura 
