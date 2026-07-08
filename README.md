@@ -16,7 +16,7 @@ Para separarmos os tópicos da apresentação, decidimos explicar sobre o sistem
   - [Índice](#índice)
   - [Índice](#índice-1)
   - [Descrição do projeto](#descrição-do-projeto)
-  - [EQUIPE: OS-- Sem hexa](#equipe-os---sem-hexa)
+  - [EQUIPE OS Sem hexa](#equipe-os-sem-hexa)
   - [Introdução e objetivos](#introdução-e-objetivos)
   - [Diagrama de blocos](#diagrama-de-blocos)
   - [Explicações do código](#explicações-do-código)
@@ -24,6 +24,8 @@ Para separarmos os tópicos da apresentação, decidimos explicar sobre o sistem
   - [Testes](#testes)
     - [keylogger (main.c)](#keylogger-mainc)
   - [Uso de IA](#uso-de-ia)
+  - [Bibliografia](#bibliografia)
+  
 --- 
 
 ## Descrição do projeto
@@ -32,7 +34,7 @@ Projeto desenvolvido para a diciplina de Sistemas Operacionais. O projeto visa a
 
 ---
 
-## EQUIPE: OS-- Sem hexa
+## EQUIPE OS Sem hexa
 
 integrantes:
 
@@ -98,3 +100,14 @@ Para a claresa academica, detalharemos onde nos usamos Inteligencia artivicial d
 
 * A documentação foi feita por nós, mas utilizamos IA para o entendimento de algumas funcionalidades do Markdown e para a clareza de alguns termos e conceitos duvidosos do xsf. E o índice.
 * No binder, usamos IA para pesquisa mais rápida sobre algumas partes mais a baixo nivel do linux, bem como para algumas consutas de revisão.
+
+## Bibliografia
+
+alguns links para estudo:
+
+* [instalando uma vm](https://github.com/JunioCesarFerreira/Cooja-Docker-VM-Setup/blob/main/vm%2Fprepare-vm-enviroment.md)
+* [sobre scripts C](https://share.google/EqrbeKSctUIsfWHEi)
+* [Coding a Keylogger in raw C](https://youtu.be/sw26Ptkdhuc)
+* [XSF - arquilinux](https://man.archlinux.org/man/xfs.5.en)
+* [XSF - usado como base](https://www.ufsexplorer.com/articles/storage-technologies/xfs-file-system/)
+* [sistema de arquivos no geral](https://www.youtube.com/playlist?list=PL866_LrQxNVhjUCo5b9iQLvgTtC9RoyO1)
