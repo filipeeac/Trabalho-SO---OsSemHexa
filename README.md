@@ -60,4 +60,15 @@ Basicamente, o "Hacker" deve gerar o arquivo que contém o Logger.Para isso ele 
 
 ## Testes
 
+### keylogger (main.c)
+
+Para testarmos o monitorador do teclado, foram seguidos os seguintes passos:
+
+1. Fazer um script que lê um arquivo em /dev/input/eventX e o decodifica usando a `struct input_events` do Linux
+2. Printar o resultado da leitura no terminal
+3. Fazer uma análise da saída
+4. Identificar qual tecla mapeia para qual valor da tabela definida em `input-event-codes.h`
+
+Dessa maneira foi possível construir o mapeamento de caracteres no código para um layout físico, simulando o que é implementado em bibliotecas oficiais, como na biblioteca `libxkbcommon`.
+
 ## Uso de IA
