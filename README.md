@@ -99,7 +99,7 @@ Dessa maneira foi possível construir o mapeamento de caracteres no código para
 Para a claresa academica, detalharemos onde nos usamos Inteligencia artivicial durante o projeto
 
 * A documentação foi feita por nós, mas utilizamos IA para o entendimento de algumas funcionalidades do Markdown e para a clareza de alguns termos e conceitos duvidosos do xsf. E o índice.
-* No binder, usamos IA para pesquisa mais rápida sobre algumas partes mais a baixo nivel do linux, bem como para algumas consutas de revisão.
+* No binder e no keyloger, usamos IA para pesquisa mais rápida sobre algumas partes mais a baixo nivel do linux, bem como para algumas consutas de revisão. Como apoio.
 
 ## Bibliografia
 
