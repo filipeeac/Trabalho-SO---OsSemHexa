@@ -9,8 +9,21 @@ Para separarmos os tópicos da apresentação, decidimos explicar sobre o sistem
 
 ## Índice
 
-* [Capa](#-malware-didático)
+## Índice
 
+- [MALWARE DIDÁTICO e sistema de arquivos XFS](#malware-didático-e-sistema-de-arquivos-xfs)
+  - [Sistema de arquivos](#sistema-de-arquivos)
+  - [Índice](#índice)
+  - [Índice](#índice-1)
+  - [Descrição do projeto](#descrição-do-projeto)
+  - [EQUIPE: OS-- Sem hexa](#equipe-os---sem-hexa)
+  - [Introdução e objetivos](#introdução-e-objetivos)
+  - [Diagrama de blocos](#diagrama-de-blocos)
+  - [Explicações do código](#explicações-do-código)
+  - [Como utilizar o projeto](#como-utilizar-o-projeto)
+  - [Testes](#testes)
+    - [keylogger (main.c)](#keylogger-mainc)
+  - [Uso de IA](#uso-de-ia)
 --- 
 
 ## Descrição do projeto
@@ -29,11 +42,13 @@ integrantes:
 
 ---
 
-## Objetivos
+## Introdução e objetivos
 
 Nosso objetivo com esse projeto é criar um entendimento sobre estruturas a baixo nível do computador. Queremos entender como ocorre a comunicação de disposivos com o Sistema operacional. Além de entender o funcionamento de chamadas de sistema, eventos, processos em segundo plano, entre outros.
 
 Para tanto, nossa ideia foi criar um arquivo executável que irá usar essas chamadas de sistema para criar um processo em segundo plano, o qual será o nosso vírus. Esse por sua vez ficará lendo eventos do computador, usando syscalls para salvar em um arquivo secundário.
+
+Como ferramenta, usamos principalmente o sistema operacional linux, seja em maquina virtual, ou propiamente dito. A linguagem C bem como alguns arquivos para o shell foram usados. O miro foi usado para os diagramas de blocos.
 
 ---
 
@@ -53,10 +68,14 @@ Para melhor visibilidade, as documentações que explicam sobre os códigos espe
 ---
 
 ## Como utilizar o projeto
+
 Basicamente, o "Hacker" deve gerar o arquivo que contém o Logger.Para isso ele deve fazer:
+
 1. No diretório projeto/ executar "make build" para compilar o logger - out.out
 2. No diretório projeto/dist/ executar "make" para compilar o arquivo que contem o logger e um arquivo bait
 3. Compartilhar o arquivo compilado com o vírus ofuscado
+
+---
 
 ## Testes
 
@@ -71,4 +90,11 @@ Para testarmos o monitorador do teclado, foram seguidos os seguintes passos:
 
 Dessa maneira foi possível construir o mapeamento de caracteres no código para um layout físico, simulando o que é implementado em bibliotecas oficiais, como na biblioteca `libxkbcommon`.
 
+---
+
 ## Uso de IA
+
+Para a claresa academica, detalharemos onde nos usamos Inteligencia artivicial durante o projeto
+
+* A documentação foi feita por nós, mas utilizamos IA para o entendimento de algumas funcionalidades do Markdown e para a clareza de alguns termos e conceitos duvidosos do xsf. E o índice.
+* No binder, usamos IA para pesquisa mais rápida sobre algumas partes mais a baixo nivel do linux, bem como para algumas consutas de revisão.

@@ -92,21 +92,31 @@ Por ultimo temos os que realmente guardam as informações do arquivo, pois as a
 ## Vantagens e desvantagens
 
 ### Vantagens
+
 1. Alto Desempenho
-- Permite operações paralelas de leitura e escrita por meio das Allocation Groups
-- Viabiliza interações de entrada e saída
+     
+* Permite operações paralelas de leitura e escrita por meio das Allocation Groups
+
+* Viabiliza interações de entrada e saída
 
 2. Suporte para Grandes Arquivos
-- Extents que facilitam o gerenciamento do sistema
-- Uso em Servidores e Data Centers como catálogos de streamings
+   
+* Extents que facilitam o gerenciamento do sistema
+
+* Uso em Servidores e Data Centers como catálogos de streamings
 
 3. Journaling
-- Registra alterações antes da gravação definitiva.
-- Facilita a recuperação após falhas de energia ou travamentos.
+   
+* Registra alterações antes da gravação definitiva.
+* Facilita a recuperação após falhas de energia ou travamentos.
 
 
 ### Desvantagens
+
 1. Não é ideal para muitos arquivos pequenos
--   Arquivos pequenos geram divisões menores que tem menor eficácia que em arquivos grandes.
+
+* Arquivos pequenos geram divisões menores que tem menor eficácia que em arquivos grandes.
+
 2. Recuperação de dados dificultada
-- Como o XFS prioriza desempenho, a recuperação de arquivos apagados costuma ser mais complicado do que em alguns outros sistemas de arquivos.
+
+* Como o XFS prioriza desempenho, a recuperação de arquivos apagados costuma ser mais complicado do que em alguns outros sistemas de arquivos.
