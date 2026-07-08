@@ -3,7 +3,7 @@
 ## Sistema de arquivos
 Para separarmos os tópicos da apresentação, decidimos explicar sobre o sistema de arquivos xfs em outro documento, acesse:
 
-* [XFS](SA\docs\README.md)
+* [XFS](SA/docs/README.md)
   
 ---
 
