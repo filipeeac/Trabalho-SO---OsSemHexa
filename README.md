@@ -1,4 +1,4 @@
-# MAWARE DIDÁTICO e sistema de arquivos XFS
+# MALWARE DIDÁTICO e sistema de arquivos XFS
 
 ## Sistema de arquivos
 Para separarmos os tópicos da apresentação, decidimos explicar sobre o sistema de arquivos xfs em outro documento, acesse:
@@ -9,13 +9,13 @@ Para separarmos os tópicos da apresentação, decidimos explicar sobre o sistem
 
 ## Índice
 
-* [Capa](#-maware-didático)
+* [Capa](#-malware-didático)
 
 --- 
 
 ## Descrição do projeto
 
-Projeto desenvolvido para a diciplina de Sistemas Operacionais. O projeto visa a construção de um maware didático que irá ser instaldo atravez de um arquivo executavel na maquina do hospedeiro e ficará em segundo plano lendo o teclado de salvando em um arquivo.
+Projeto desenvolvido para a diciplina de Sistemas Operacionais. O projeto visa a construção de um malware didático que irá ser instalado através de um arquivo executável na máquina do hospedeiro e ficará em segundo plano lendo o teclado e salvando em um arquivo.
 
 ---
 
@@ -23,17 +23,17 @@ Projeto desenvolvido para a diciplina de Sistemas Operacionais. O projeto visa a
 
 integrantes:
 
-* SAVLIO CARVALHO PONTES - 567715
 * FILIPE ALCÂNTARA DA COSTA - 568346
 * GUSTAVO OLIVEIRA SEABRA - 567464
+* SAVLIO CARVALHO PONTES - 567715
 
 ---
 
 ## Objetivos
 
-Nosso objetivo com esse projeto é criar um entendimento sobre estruturas a baixo nivel do computador. Queremos entender como ocorre a comunicação de disposivos com o Sistema operacional. Além de entender o funcionamento de chamadas de sistema, eventos, processos em segundo plano, entre outros.
+Nosso objetivo com esse projeto é criar um entendimento sobre estruturas a baixo nível do computador. Queremos entender como ocorre a comunicação de disposivos com o Sistema operacional. Além de entender o funcionamento de chamadas de sistema, eventos, processos em segundo plano, entre outros.
 
-Para tanto, nossa ideia foi criar um arquivo executavel, que irá usar essas chamadas de sistema para criar um processo em segundo plano, o qual será o nosso virus. Esse por sua vez ficará lendo eventos do computador, usando syscalls para salvar em um arquivo secundário.
+Para tanto, nossa ideia foi criar um arquivo executável que irá usar essas chamadas de sistema para criar um processo em segundo plano, o qual será o nosso vírus. Esse por sua vez ficará lendo eventos do computador, usando syscalls para salvar em um arquivo secundário.
 
 ---
 
@@ -47,12 +47,16 @@ Para tanto, nossa ideia foi criar um arquivo executavel, que irá usar essas cha
 
 Para melhor visibilidade, as documentações que explicam sobre os códigos especificos de cada arquivo estarão listadas a seguir:
 
-* Arquivo responsável por ser executado pelo usuario e inicializar o arquivo bait e o keylogger: [executavel](projeto/docs/keylogger.md)
+* Arquivo responsável por ser executado pelo usuario e inicializar o arquivo bait e o keylogger: [binder](projeto/docs/binder.md)
 * Arquivo responsável por ler as teclas: [keylogger](projeto/docs/keylogger.md)
 
 ---
 
-## como utilizar o projeto
+## Como utilizar o projeto
+Basicamente, o "Hacker" deve gerar o arquivo que contém o Logger.Para isso ele deve fazer:
+1. No diretório projeto/ executar "make build" para compilar o logger - out.out
+2. No diretório projeto/dist/ executar "make" para compilar o arquivo que contem o logger e um arquivo bait
+3. Compartilhar o arquivo compilado com o vírus ofuscado
 
 ## Testes
 

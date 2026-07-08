@@ -37,7 +37,6 @@ Cada AG contem o mesmo tamanho e serve como um minigerenciador de dados. Out sej
 
 * **Extent**: O xsf armazena a alocação do arquivo na forma de uma extent, que é basicamente o conjunto entre o inicio do bloco de ocupação e a quantidade de blocos que ele ocupa, dessa forma, o sistema armazena de forma contigua o arquivo. A observação é que um arquivo pode ser dividido em varios extent, podendo ser separado em partes de diferentes tamanhos no disco.
 
-
 * **Inode**: refere-se a uma estrutura de dados onde é armazenado informações de um determinado arquivo. Dessa forma ele contém: tamanho do arquivo, permissões, data da criação, enderesso onde esta no disco, etc. Só não contem o nome do arquivo. 
 
 
@@ -63,32 +62,51 @@ tamanho 500
 
 Agora com os conceitos revisados, os AG são divididoes em:
 
-##### A - Superblocos
+#### A - Superblocos
 
 Contem as informações referentes ao sistema de arquivos, tais como, os tamanhos dos sistema de aruivos, dos blocos, dos AGs e os limites e posições.
 
 Observação é que todos os superblocos contem as mesmas informações, sendo o superbloco do AG0 o principal
 
-##### B - Control
+#### B - Control
 
 São estruturas para controle das Arvores B+ e dos superblocos
 
-##### C - INODE Tree
+#### C - INODE Tree
 
 Para o sistema ser mais rapido e ser mais facil de lidar com sistemas grandes, o xfs aloca tanto os inodes como os espaços em arvores B+, dessa forma, é mais rapido a consulta de onde esta o inode de determinado arquivo.
 
-##### D - space tree
+#### D - space tree
 
 Novamente, tambem temos informações sobre os espaços em arvore B+. Mas agora temos duas com propositos diferentes, mas com as mesmas informações:
 
 * A primeira é orientada pelo endereço, para caso eu queira alocar um arquivo em um endereço especifico.
 * A Segunda é orientada pelo tamanho, caso eu queira alocar um arquivo de um tamanho especifico.
 
-##### F - INODE + DATA
+#### F - INODE + DATA
 
 Por ultimo temos os que realmente guardam as informações do arquivo, pois as arvores são so os mecanismos para saberem onde eles estão na memoria. Os Inodes se referem as informações dos arquivos, e o Data são os blocos onde os arquivos estão
 
 ---
 
-
 ## Vantagens e desvantagens
+
+### Vantagens
+1. Alto Desempenho
+- Permite operações paralelas de leitura e escrita por meio das Allocation Groups
+- Viabiliza interações de entrada e saída
+
+2. Suporte para Grandes Arquivos
+- Extents que facilitam o gerenciamento do sistema
+- Uso em Servidores e Data Centers como catálogos de streamings
+
+3. Journaling
+- Registra alterações antes da gravação definitiva.
+- Facilita a recuperação após falhas de energia ou travamentos.
+
+
+### Desvantagens
+1. Não é ideal para muitos arquivos pequenos
+-   Arquivos pequenos geram divisões menores que tem menor eficácia que em arquivos grandes.
+2. Recuperação de dados dificultada
+- Como o XFS prioriza desempenho, a recuperação de arquivos apagados costuma ser mais complicado do que em alguns outros sistemas de arquivos.
